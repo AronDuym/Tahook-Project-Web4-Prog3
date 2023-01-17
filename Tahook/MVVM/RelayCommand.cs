@@ -25,13 +25,13 @@ namespace MVVM
         {
             add
             {
-                //.Windows.Input.CommandManager.RequerySuggested += value;
+                CommandManager.RequerySuggested += value;
                 this.CanExecuteChangedInternal += value;
             }
 
             remove
             {
-                //CommandManager.RequerySuggested -= value;
+                CommandManager.RequerySuggested -= value;
                 this.CanExecuteChangedInternal -= value;
             }
         }
