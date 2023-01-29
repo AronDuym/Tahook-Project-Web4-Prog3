@@ -8,8 +8,7 @@ namespace Tahook.Domain.Model
 {
     public class User
     {
-
-        public string Naam { get; set; }
+        public string UserName { get; set; }
 
         public string Email { get; set; }
 
@@ -17,12 +16,15 @@ namespace Tahook.Domain.Model
 
         public Role Role { get; set; }
 
-        public User(string naam, string email, string password, Role role)
+        public Quiz Quiz { get; set; }
+
+        public User(string userName, string email, string password, Role role, Quiz quiz)
         {
-            Naam = naam;
+            UserName = userName;
             Email = email;
             Password = password;
             Role = role;
+            Quiz = quiz;
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface ISessionRepository
     {
-
+        //No Table
     }
 }

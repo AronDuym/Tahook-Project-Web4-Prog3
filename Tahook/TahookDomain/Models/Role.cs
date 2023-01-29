@@ -4,23 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tahook.DTO.Model
+namespace Tahook.Domain.Model
 {
     public class Role
     {
-        public int Id { get; set; }
-
         public string Description { get; set; }
 
         public int UserId { get; set; }
 
         public List<User> Users { get; set; }
 
-        //public Role(int id, string description, int userId)
-        //{
-        //    Id = id;
-        //    Description = description;
-        //    UserId = userId;
-        //}
+        public Role(string description, int userId, List<User> users)
+        {
+            Description = description;
+            UserId = userId;
+            Users = users;
+        }
     }
 }

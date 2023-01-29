@@ -2,7 +2,10 @@
 {
     public class LeaderBoard
     {
-        public string Description { get; set; }
+
+        public User User { get; set; }
+
+        public Session Session{ get; set; }
 
         public int Score { get; set; }
     }

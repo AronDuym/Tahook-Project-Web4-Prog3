@@ -8,8 +8,14 @@ namespace Tahook.Domain.Model
 {
     public class GameTopic
     {
+        public string Description { get; set; }
+
         public List<Quiz> Quizzes { get; set; }
 
-        public string Description { get; set; }
+        public GameTopic(string description, List<Quiz> quizzes)
+        {
+            Description = description;
+            Quizzes = quizzes;
+        }
     }
 }

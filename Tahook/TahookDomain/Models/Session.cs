@@ -8,10 +8,15 @@ namespace Tahook.Domain.Model
 {
     public class Session
     {
+
         public string PinCode { get; set; }
 
         public DateTime Start { get; set; }
 
         public DateTime Stop { get; set; }
+
+        public Quiz Quiz { get; set; }
+
+        public User UserUser { get; set; }
     }
 }

@@ -9,6 +9,8 @@ namespace Tahook.Infrastructure.Mapping
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Role");
+            builder.HasKey(x => x.Id);
+            builder.HasMany(x => x.Users).WithOne(x => x.Role).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

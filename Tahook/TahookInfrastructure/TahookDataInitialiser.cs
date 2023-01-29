@@ -1,23 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Tahook.Infrastructure
 {
     public class TahookDataInitialiser
     {
-        TahookContext TahookContext_context = new TahookContext();
+        private readonly TahookContext _dbcontext;
 
-        public TahookDataInitialiser(TahookContext tahookContext_context)
+        public TahookDataInitialiser(TahookContext dbContext)
         {
-            TahookContext_context = tahookContext_context;
+            _dbcontext = dbContext;
         }
 
-        public async Task InitializeData()
+        public void InitializeData()
         {
-            //TODO
+            if (!_dbcontext.Quiz.Any())
+            {
+                //TODO
+
+
+
+
+
+
+
+                _dbcontext.SaveChanges();
+            }
         }
     }
 }

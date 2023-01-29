@@ -9,6 +9,7 @@ namespace Tahook.Infrastructure.Mapping
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
+            builder.HasKey(x => x.Id);
         }
     }
 }

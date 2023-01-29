@@ -9,6 +9,8 @@ namespace Tahook.Infrastructure.Mapping
         public void Configure(EntityTypeBuilder<Question> builder)
         {
             builder.ToTable("Question");
+            builder.HasKey(x => x.Id);
+            builder.HasOne(x => x.Quiz).WithMany(x => x.Questions).HasForeignKey(x => x.QuizId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

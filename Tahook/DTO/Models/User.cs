@@ -10,7 +10,7 @@ namespace Tahook.DTO.Model
     {
         public int Id { get; set; }
 
-        public string Naam { get; set; }
+        public string UserName { get; set; }
 
         public string Email { get; set; }
 
@@ -18,11 +18,23 @@ namespace Tahook.DTO.Model
 
         public Role Role { get; set; }
 
-        public User(string naam, string email, string password, Role role)
-        {
-            Naam = naam;
-            Email = email;
-            Password = password;
-            Role = role;
-        }
+        public Quiz Quiz { get; set; }
+
+        //public User(string userName, string email, string password, Role role, Quiz quiz)
+        //{
+        //    UserName = userName;
+        //    Email = email;
+        //    Password = password;
+        //    Role = role;
+        //    Quiz = quiz;
+        //}
+
+        //public User(int id, string userName, string email, string password)
+        //{
+        //    Id = id;
+        //    UserName = userName;
+        //    Email = email;
+        //    Password = password;
+        //}
     }
+}

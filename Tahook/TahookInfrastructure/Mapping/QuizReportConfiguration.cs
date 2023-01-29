@@ -9,6 +9,10 @@ namespace Tahook.Infrastructure.Mapping
         public void Configure(EntityTypeBuilder<QuizReport> builder)
         {
             builder.ToTable("QuizReport");
+            builder.HasKey(x => x.Id);
+            builder.HasOne(x => x.Question);
+            builder.HasOne(x => x.Answer);
+            builder.HasOne(x => x.User);
         }
     }
 }

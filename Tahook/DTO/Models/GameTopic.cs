@@ -10,8 +10,14 @@ namespace Tahook.DTO.Model
     {
         public int Id { get; set; }
 
+        public string Description { get; set; }
+
         public List<Quiz> Quizzes { get; set; }
 
-        public string Description { get; set; }
+        //public GameTopic(int id, string description)
+        //{
+        //    Id = id;
+        //    Description = description;
+        //}
     }
 }

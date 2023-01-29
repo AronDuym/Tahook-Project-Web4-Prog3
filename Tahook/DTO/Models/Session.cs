@@ -8,12 +8,30 @@ namespace Tahook.DTO.Model
 {
     public class Session
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
-        public string PinCode { get; set; }
+        
 
-        public DateTime Start { get; set; }
+        //public Quiz Quiz { get; set; }
 
-        public DateTime Stop { get; set; }
+        //public User User { get; set; }
+
+        //public Session(int id, string pinCode, DateTime start, DateTime stop, Quiz quiz, User userUser)
+        //{
+        //    Id = id;
+        //    PinCode = pinCode;
+        //    Start = start;
+        //    Stop = stop;
+        //    Quiz = quiz;
+        //    User = userUser;
+        //}
+
+        //public Session(int id, string pinCode, DateTime start, DateTime stop)
+        //{
+        //    Id = id;
+        //    PinCode = pinCode;
+        //    Start = start;
+        //    Stop = stop;
+        
     }
 }

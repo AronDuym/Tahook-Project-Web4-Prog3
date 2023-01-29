@@ -9,6 +9,7 @@ namespace Tahook.Infrastructure.Mapping
         public void Configure(EntityTypeBuilder<GameTopic> builder)
         {
             builder.ToTable("GameTopic");
+            builder.HasKey(x => x.Id);
         }
     }
 }

@@ -2,10 +2,20 @@
 {
     public class LeaderBoard
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
-        public string Description { get; set; }
+        //public User User { get; set; }
 
-        public int Score { get; set; }
+        //public Session Session { get; set; }
+
+        //public int Score { get; set; }
+
+        //public LeaderBoard(int id, User user, Session session, int score)
+        //{
+        //    Id = id;
+        //    User = user;
+        //    Session = session;
+        //    Score = score;
+        //}
     }
 }
