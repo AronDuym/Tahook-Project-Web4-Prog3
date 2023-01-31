@@ -4,11 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tahook.Domain.Model;
+using Tahook.Tests.Data;
 
 namespace Tahook.Tests.Models
 {
     public class GameTopicTest
     {
+        private readonly DummyDbContext _db;
+
+        public GameTopicTest(DummyDbContext db)
+        {
+            _db = db;
+        }
+
         [Fact]
         public void TestGameTopicConstructor()
         {
