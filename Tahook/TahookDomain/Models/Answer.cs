@@ -19,5 +19,7 @@
             Question = question;
             Image = image;
         }
+
+        public Answer() { }
     }
 }

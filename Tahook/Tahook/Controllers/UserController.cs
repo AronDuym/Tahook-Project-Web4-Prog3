@@ -102,6 +102,37 @@ namespace Tahook.Api.Controllers
             return Ok(user);
         }
 
+        [HttpGet("GetUsersByRole", Name = nameof(UsersGetByRole))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<User>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<List<User>> UsersGetByRole(Role role)
+        {
+            _logger?.LogDebug("-> User::GetUsersByRole");
+            var users = _userRepository.UserGetByRole(role);
+            if (users == null)
+            {
+                _logger?.LogDebug("<- User::GetUsersByRole (Fail)");
+                return NotFound(new List<Answer>());
+            }
+            _logger?.LogDebug("<- User::GetUsersByRole (Ok)");
+            return Ok(users);
+        }
+
+        [HttpGet("GetUsersByQuiz", Name = nameof(UsersGetByQuiz))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<User>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<List<User>> UsersGetByQuiz(Quiz quiz)
+        {
+            _logger?.LogDebug("-> User::GetUsersByQuiz");
+            var users = _userRepository.UserGetByQuiz(quiz);
+            if (users == null)
+            {
+                _logger?.LogDebug("<- User::GetUsersByQuiz (Fail)");
+                return NotFound(new List<Answer>());
+            }
+            _logger?.LogDebug("<- User::GetUsersByQuiz (Ok)");
+            return Ok(users);
+        }
 
         //------------------------------------------------------------------------------------------------
 
@@ -183,6 +214,38 @@ namespace Tahook.Api.Controllers
             }
             _logger?.LogDebug("<- User::GetByPasswordAsync (Ok)");
             return Ok(user);
+        }
+
+        [HttpGet("GetUsersByRoleAsync", Name = nameof(UsersGetByRoleAsync))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<User>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<List<User>>> UsersGetByRoleAsync(Role role)
+        {
+            _logger?.LogDebug("-> User::GetUsersByRoleAsync");
+            var users = await _userRepository.UserGetByRoleAsync(role);
+            if (users == null)
+            {
+                _logger?.LogDebug("<- User::GetUsersByRoleAsync (Fail)");
+                return NotFound(new List<Answer>());
+            }
+            _logger?.LogDebug("<- User::GetUsersByRoleAsync (Ok)");
+            return Ok(users);
+        }
+
+        [HttpGet("GetUsersByQuizAsync", Name = nameof(UsersGetByQuizAsync))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<User>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<List<User>>> UsersGetByQuizAsync(Quiz quiz)
+        {
+            _logger?.LogDebug("-> User::GetUsersByQuizAsync");
+            var users = await _userRepository.UserGetByQuizAsync(quiz);
+            if (users == null)
+            {
+                _logger?.LogDebug("<- User::GetUsersByQuizAsync (Fail)");
+                return NotFound(new List<Answer>());
+            }
+            _logger?.LogDebug("<- User::GetUsersByQuizAsync (Ok)");
+            return Ok(users);
         }
 
         //------------------------------------------------------------------------------------------------

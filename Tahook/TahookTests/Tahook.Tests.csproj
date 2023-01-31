@@ -31,4 +31,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TahookDomain\Tahook.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

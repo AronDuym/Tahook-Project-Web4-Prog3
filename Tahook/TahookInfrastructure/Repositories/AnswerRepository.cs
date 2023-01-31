@@ -62,6 +62,17 @@ namespace Tahook.Infrastructure.Repositories
             return _dbcontext.Answer.ToListAsync();
         }
 
+        public List<Answer?> AnswersGetByQuestion(Question question)
+        {
+            List<Answer?> answers = _dbcontext.Answer.Where(x => x.Question.Id == question.Id).ToList();
+            return answers;
+        }
+
+        public Task<List<Answer?>> AnswersGetByQuestionAsync(Question question)
+        {
+            return _dbcontext.Answer.Where(x => x.Question.Id == question.Id).ToListAsync();
+        }
+
         public void AnswerUpdate(Answer answer)
         {
             _dbcontext.Answer.Update(answer);

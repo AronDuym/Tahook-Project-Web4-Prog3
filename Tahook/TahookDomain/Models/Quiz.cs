@@ -34,5 +34,9 @@ namespace Tahook.Domain.Model
             Users = users;
             Questions = questions;
         }
+
+        public Quiz()
+        {
+        }
     }
 }

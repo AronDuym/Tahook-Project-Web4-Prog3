@@ -12,11 +12,15 @@ namespace Tahook.DTO.Contracts
         User? UserGetByUsername(string username);
         User? UserGetByEmail(string email);
         User? UserGetByPassword(string password);
+        List<User?> UserGetByRole(Role role);
+        List<User?> UserGetByQuiz(Quiz quiz);
 
         Task<User?> UserGetByIdAsync(int id);
         Task<User?> UserGetByUsernameAsync(string username);
         Task<User?> UserGetByEmailAsync(string email);
         Task<User?> UserGetByPasswordAsync(string password);
+        Task<List<User?>> UserGetByQuizAsync(Quiz quiz);
+        Task<List<User?>> UserGetByRoleAsync(Role role);
 
         void UserCreate(User user);
         void UserUpdate(User user);

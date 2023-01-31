@@ -58,6 +58,28 @@ namespace Tahook.Infrastructure.Repositories
             return _dbcontext.User.FirstOrDefaultAsync(x => x.Password == password);
         }
 
+        public List<User?> UserGetByQuiz(Quiz quiz)
+        {
+            List<User?> users = _dbcontext.User.Where(x => x.Quiz.Id == quiz.Id).ToList();
+            return users;
+        }
+
+        public Task<List<User?>> UserGetByQuizAsync(Quiz quiz)
+        {
+            return _dbcontext.User.Where(x => x.Quiz.Id == quiz.Id).ToListAsync();
+        }
+
+        public List<User?> UserGetByRole(Role role)
+        {
+            List<User?> users = _dbcontext.User.Where(x => x.Role.Id == role.Id).ToList();
+            return users;
+        }
+
+        public Task<List<User?>> UserGetByRoleAsync(Role role)
+        {
+            return _dbcontext.User.Where(x => x.Role.Id == role.Id).ToListAsync();
+        }
+
         public User? UserGetByUsername(string username)
         {
             User? user = _dbcontext.User.FirstOrDefault(x => x.UserName== username);

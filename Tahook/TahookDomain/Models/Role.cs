@@ -20,5 +20,10 @@ namespace Tahook.Domain.Model
             UserId = userId;
             Users = users;
         }
+
+        public Role()
+        {
+
+        }
     }
 }

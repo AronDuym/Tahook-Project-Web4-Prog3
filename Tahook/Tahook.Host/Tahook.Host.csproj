@@ -8,20 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Generated\SwaggerClient.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MVVM\MVVM.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
     <Folder Include="Resources\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Generated\SwaggerClient.cs" />
   </ItemGroup>
 
   <ItemGroup>

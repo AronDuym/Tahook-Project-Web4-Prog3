@@ -26,5 +26,10 @@ namespace Tahook.Domain.Model
             Role = role;
             Quiz = quiz;
         }
+
+        public User()
+        {
+
+        }
     }
 }

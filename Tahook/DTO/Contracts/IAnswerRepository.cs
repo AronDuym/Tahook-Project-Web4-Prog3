@@ -14,11 +14,14 @@ namespace Tahook.DTO.Contracts
 
         Answer? AnswerGetById(int id);
         Answer? AnswerGetByDescription(string description);
+        List<Answer?> AnswersGetByQuestion(Question question);
 
         Task<Answer?> AnswerGetByIdAsync(int id);
         Task<Answer?> AnswerGetByDescriptionAsync(string description);
+        Task<List<Answer?>> AnswersGetByQuestionAsync(Question question);
 
-        //Answer AnswerGetByQuestion(Question question);
+
+
 
         void AnswerCreate(Answer answer);
         void AnswerUpdate(Answer answer);

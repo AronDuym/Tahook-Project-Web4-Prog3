@@ -70,6 +70,23 @@ namespace Tahook.Api.Controllers
             return Ok(answer);
 
         }
+
+        [HttpGet("GetAnswersByQuestion/{question}", Name = nameof(AnswersGetByQuestion))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Answer>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<List<Answer>> AnswersGetByQuestion(Question question)
+        {
+            _logger?.LogDebug("-> Answer::GetAnswersByQuestion");
+            var answers = _answerRepository.AnswersGetByQuestion(question);
+            if (answers == null)
+            {
+                _logger?.LogDebug("<- Answer::GetAnswersByQuestion (Fail)");
+                return NotFound(new List<Answer>());
+            }
+            _logger?.LogDebug("<- Answer::GetAnswersByQuestion (Ok)");
+            return Ok(answers);
+        }
+
         //----------------------------------------------------------------------------------------
 
         [HttpGet("GetAllAnswersAsync", Name = nameof(AnswersGetAllAsync))]
@@ -119,6 +136,22 @@ namespace Tahook.Api.Controllers
             _logger?.LogDebug("<- Answer::GetByDescriptionAsync (Ok)");
             return Ok(answer);
 
+        }
+
+        [HttpGet("GetAnswersByQuestionAsync/{question}", Name = nameof(AnswersGetByQuestionAsync))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Answer>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<List<Answer>>> AnswersGetByQuestionAsync(Question question)
+        {
+            _logger?.LogDebug("-> Answer::GetAnswersByQuestionAsync");
+            var answers = await _answerRepository.AnswersGetByQuestionAsync(question);
+            if (answers == null)
+            {
+                _logger?.LogDebug("<- Answer::GetAnswersByQuestionAsync (Fail)");
+                return NotFound(new List<Answer>());
+            }
+            _logger?.LogDebug("<- Answer::GetAnswersByQuestionAsync (Ok)");
+            return Ok(answers);
         }
 
 

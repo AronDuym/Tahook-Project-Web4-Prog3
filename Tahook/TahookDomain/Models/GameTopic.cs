@@ -17,5 +17,9 @@ namespace Tahook.Domain.Model
             Description = description;
             Quizzes = quizzes;
         }
+
+        public GameTopic()
+        {
+        }
     }
 }

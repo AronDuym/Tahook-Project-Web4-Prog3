@@ -20,5 +20,11 @@
             User = user;
             RegistrationTime = registrationTime;
         }
+
+        public QuizReport()
+        {
+
+        }
+
     }
 }

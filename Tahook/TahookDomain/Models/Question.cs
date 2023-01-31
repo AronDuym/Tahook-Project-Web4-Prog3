@@ -23,5 +23,9 @@
             Quiz = quiz;
             Answers = answers;
         }
+
+        public Question()
+        {
+        }
     }
 }
