@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tahook.DTO.Model;
 
-namespace Tahook.Host.ViewModels
+namespace Tahook.User.ViewModels
 {
     public class QuestionViewModel : ViewModelBase
     {

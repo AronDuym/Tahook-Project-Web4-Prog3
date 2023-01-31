@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tahook.DTO.Model;
 
-namespace Tahook.Host.ViewModels
+namespace Tahook.User.ViewModels
 {
     public class RoleViewModel : ViewModelBase
     {
@@ -87,7 +88,7 @@ namespace Tahook.Host.ViewModels
             Id = role.Id;
             Description = role.Description;
             UserId = role.UserId;
-            Users = role.Users.ToList();
+            Users = (List<User>)role.Users;
         }
     }
 }

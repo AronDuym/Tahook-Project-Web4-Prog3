@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tahook.DTO.Model;
 
-namespace Tahook.Host.ViewModels
+namespace Tahook.User.ViewModels
 {
     public class QuizViewModel : ViewModelBase
     {
@@ -181,8 +182,8 @@ namespace Tahook.Host.ViewModels
             Stop= quiz.Stop.DateTime;
             GameTopic = quiz.GameTopic;
             UserId = quiz.UserId;
-            Users = quiz.Users.ToList();
-            Questions = quiz.Questions.ToList();
+            Users = (List<User>)quiz.Users;
+            Questions = (List<Question>)quiz.Questions;
 
         }
 
